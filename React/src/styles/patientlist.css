@@ -1,0 +1,34 @@
+/* .list-header{
+    display: flex;
+    margin: 2rem 0;
+    justify-content: space-between;
+}
+.list-header h2{
+    color: red;
+}
+.list-header button{
+    background-color:yellow;
+    color: red;
+    flex-direction: column;
+}.list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+.list{
+    display: flex;
+    padding: right 10px;
+    align-items: center;
+    justify-content: center;
+    transition:0.3s ease-in-out 
+}
+.patient-detail{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(15, 109, 217);
+}
+.list:hover{
+    background-color: rgb(223, 216, 14);
+    border-radius: 10px;
+} */
