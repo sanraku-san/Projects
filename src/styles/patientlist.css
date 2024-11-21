@@ -1,0 +1,21 @@
+.list-header{
+    color: #17035f;
+    margin-top: 2rem;
+    margin-bottom: 5px;
+    
+}
+table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center; 
+    padding: 10px;
+    border: 1px solid #043e80; 
+}
+
+th {
+    background-color: #17035f;
+    color: white; 
+}

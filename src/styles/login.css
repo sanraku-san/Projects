@@ -1,0 +1,7 @@
+button{
+    width: fit-content;
+    height: fit-content;
+    background: rgb(4, 4, 116);
+    color: aliceblue;
+    padding: 10px;
+}

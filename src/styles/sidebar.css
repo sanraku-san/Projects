@@ -1,0 +1,38 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 94vh;
+}
+.logo{
+    text-align: center;
+    padding: 20px;
+    color: yellow;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+.logo .icon{
+    font-size: 1.3rem;
+}
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu-list .item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    color: yellow;
+}
+.menu-list .item:hover{
+    background: rgb(238, 238, 106);
+    color:rgb(228, 46, 18)
+}
