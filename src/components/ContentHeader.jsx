@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/content.css'
+import Profile from "./Profile";
 
 const ContentHeader = ()=>{
     return(

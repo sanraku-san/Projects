@@ -1,10 +1,10 @@
 import React from "react";
-import LoginLogout from "../Modals/loginlogout";
+import LogModal from "../Modals/LoginSignupModal";
 
 const Profile = ()=>{
     return(
         
-        <LoginLogout />
+        <LogModal />
     );
 }
 export default Profile;

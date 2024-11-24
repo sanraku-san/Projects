@@ -1,0 +1,27 @@
+.A_page{
+    display: flex;
+    gap: 20px;
+    
+}
+.A_page-content{
+    background:white;
+    flex: 1;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: top;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+}
+.A_page-content button:hover{
+    transform: scale(1.1);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+    
+.A_page-header{
+    color:  rgb(3, 1, 15);
+    display: flex;
+    justify-content: space-between;
+}

@@ -3,7 +3,7 @@
     gap: 20px;
 }
 .dashboard-content{
-    background: rgb(242, 245, 94);
+    background:white;
     flex: 1;
     border-radius: 20px;
     padding: 2rem;

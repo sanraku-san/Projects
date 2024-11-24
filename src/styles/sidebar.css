@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 94vh;
+    height: 94vh;   
 }
 .logo{
     text-align: center;
     padding: 20px;
-    color: yellow;
+    color: white;
     align-items: center;
     display: flex;
     gap: 20px;
@@ -30,9 +30,9 @@
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s ease-in-out;
-    color: yellow;
+    color: white;
 }
 .menu-list .item:hover{
-    background: rgb(238, 238, 106);
-    color:rgb(228, 46, 18)
+    background: rgb(23, 6, 177);
+    color:rgb(0, 228, 114)
 }

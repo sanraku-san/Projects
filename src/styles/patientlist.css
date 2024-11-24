@@ -1,5 +1,5 @@
 .list-header{
-    color: #17035f;
+    color:  rgb(3, 1, 15);
     margin-top: 2rem;
     margin-bottom: 5px;
     
@@ -12,10 +12,10 @@ table {
 th, td {
     text-align: center; 
     padding: 10px;
-    border: 1px solid #043e80; 
+    border: 1px solid #000000; 
 }
 
 th {
-    background-color: #17035f;
+    background:  rgb(3, 1, 15);
     color: white; 
 }
