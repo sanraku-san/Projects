@@ -10,7 +10,7 @@ const Content = ()=>{
         <div className="content">
             <ContentHeader /> 
             <Card />
-            <PatientsList/>
+            {/* <PatientsList/> */}
             </div>
             <Profile/>
 </>

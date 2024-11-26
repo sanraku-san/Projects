@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; // Import Axios for API calls
 import '../styles/appointmentpage.css';
 import PatientsList from "../components/PatientsList";
 import AppointmentModal from "../Modals/Appointmentmodal";
@@ -15,10 +16,29 @@ const Appointments = () => {
     setModalOpen(false);
   };
 
+  // Fetch existing appointments from the backend
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/appointments/'); 
+        setPatients(response.data);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, []);
+
   // Function to add a new appointment
-  const handleAddAppointment = (appointmentData) => {
-    setPatients([...patients, { ...appointmentData, id: Date.now() }]); // Add appointment data with a unique id
-    handleCloseModal(); // Close the modal after adding the appointment
+  const handleAddAppointment = async (appointmentData) => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/appointments/', appointmentData); 
+      setPatients((prevPatients) => [...prevPatients, response.data]); // Add the new appointment to the state
+      handleCloseModal(); // Close the modal after adding the appointment
+    } catch (error) {
+      console.error('Error adding appointment:', error.response ? error.response.data : error.message);
+    }
   };
 
   return (

@@ -11,12 +11,14 @@ const AppointmentModal = ({ onClose, onAddAppointment }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAppointmentData({ ...appointmentData, [name]: value });
+    const normalizedValue = name === 'description' ? value.toLowerCase() : value;
+    setAppointmentData({ ...appointmentData, [name]: normalizedValue });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddAppointment(appointmentData); // Call the function passed from the parent
+    console.log('Submitting Appointment Data:', appointmentData);
+    onAddAppointment(appointmentData);
   };
 
   return (
@@ -40,10 +42,10 @@ const AppointmentModal = ({ onClose, onAddAppointment }) => {
             Purpose:
             <select name="description" value={appointmentData.description} onChange={handleChange} required>
               <option value="">Select a description</option>
-              <option value="Consultation">Consultation</option>
-              <option value="Follow-up">Follow-up</option>
-              <option value="Check-up">Check-up</option>
-              <option value="Other">Other</option>
+              <option value="consultation">Consultation</option>
+              <option value="follow_up">Follow-up</option>
+              <option value="check_up">Check-up</option>
+              <option value="other">Other</option>
             </select>
           </label>
           <button type="submit">Submit</button>
