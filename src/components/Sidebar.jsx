@@ -1,6 +1,7 @@
 import React from "react";
 import { BiHome,BiTask,BiPlusMedical,BiDollar } from "react-icons/bi";
-import { FaTooth } from "react-icons/fa6";
+import { FaTooth} from "react-icons/fa6";
+import { FcAbout } from "react-icons/fc";
 import "../styles/sidebar.css"
 import { Link } from "react-router-dom";
 
@@ -20,14 +21,14 @@ const Sidebar = ()=>{
                         <BiTask className="icon"/>
                         Appointments
                     </Link>
-                    <a href="#"className="item">
+                    <Link to={'/Available-services'} className="item">
                     <BiPlusMedical className="icon" />
-                    Patients
-                    </a>
-                    <a href="#"className="item">
-                    <BiDollar className="icon"/>
-                    Payments
-                    </a>
+                    Available Services
+                    </Link>
+                    <Link to={'/About'}className="item">
+                    <FcAbout  className="icon"/>
+                   About
+                    </Link>
                 </div>
         </div>
     );

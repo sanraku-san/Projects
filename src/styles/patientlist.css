@@ -12,10 +12,11 @@ table {
 th, td {
     text-align: center; 
     padding: 10px;
-    border: 1px solid #000000; 
+    border: 1px solid #000000;
+    border-radius: 3px; 
 }
 
 th {
     background:  rgb(3, 1, 15);
-    color: white; 
+    color: white;
 }

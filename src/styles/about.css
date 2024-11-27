@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.about-content{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 200px;
+}
+.about-image{
+  width: 120px;
+  margin-left: 200px;
+  border: 20px black;
+  & img {
+    border-radius: 20px;
+    
+  }
+
+}

@@ -3,9 +3,10 @@ import Sidebar from './components/Sidebar';
 import Content from "./components/Content";
 import Profile from "./components/Profile";
 import './App.css';
-import AppointmentModal from "./Modals/Appointmentmodal";
 import Appointments from "./pages/Appointments";
+import About from "./pages/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AvailableServices from "./pages/AvailableServices";
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Content />} />
             <Route path="/Appointments" element={<Appointments />} />
+            <Route path="/Available-services" element={<AvailableServices />} />
+            <Route path="/About" element={<About />} />
           </Routes>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Logpopupmodal.css'; // Import your CSS file for styling
+import './Logpopupmodal.css';
+
 
 const LoginSignupModal = ({ isOpen, onClose }) => {
   const [isLogin, setIsLogin] = useState(true);

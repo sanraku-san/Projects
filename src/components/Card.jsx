@@ -1,7 +1,8 @@
 // src/components/Card.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaUserDoctor, FaRegCalendarCheck, FaPersonCirclePlus } from "react-icons/fa6";
+import { FaUserDoctor, FaRegCalendarCheck } from "react-icons/fa6";
+import { FcAbout } from "react-icons/fc";
 import '../styles/content.css';
 
 const anotherNav = [
@@ -11,15 +12,16 @@ const anotherNav = [
         path: '/Appointments'
     },
     {
-        title: 'New patients',
-        icon: <FaPersonCirclePlus />,
-        path: '/new-patients'
-    },
-    {
         title: 'Available Services',
         icon: <FaUserDoctor />,
-        path: '/available-services'
+        path: '/Available-services'
     },
+    {
+        title: 'About',
+        icon: <FcAbout/>,
+        path: '/About'
+    },
+    
 ];
 
 const Card = () => {

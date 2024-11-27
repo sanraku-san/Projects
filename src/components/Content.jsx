@@ -2,7 +2,6 @@ import React from "react";
 import ContentHeader from "./ContentHeader";
 import Card from "./Card";
 import PatientsList from "./PatientsList";
-import ImageSlider from "./ImageSlider";
 import Profile from "./Profile";
 const Content = ()=>{
     return(
@@ -11,6 +10,7 @@ const Content = ()=>{
             <ContentHeader /> 
             <Card />
             {/* <PatientsList/> */}
+
             </div>
             <Profile/>
 </>

@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './appointmentmodal.css';
 
-const AppointmentModal = ({ onClose, onAddAppointment }) => {
+const AppointmentModal = ({ onClose, onAddAppointment, onUpdateAppointment, currentAppointment, isEditMode }) => {
   const [appointmentData, setAppointmentData] = useState({
     name: '',
     date: '',
     time: '',
     description: ''
   });
+
+  useEffect(() => {
+    if (isEditMode && currentAppointment) {
+      setAppointmentData(currentAppointment);
+    }
+  }, [isEditMode, currentAppointment]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,18 +23,21 @@ const AppointmentModal = ({ onClose, onAddAppointment }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitting Appointment Data:', appointmentData);
-    onAddAppointment(appointmentData);
+    if (isEditMode) {
+      onUpdateAppointment(appointmentData);
+    } else {
+      onAddAppointment(appointmentData);
+    }
   };
 
   return (
     <div className="modal">
       <div className="modal-content">
-        <h2>Set Appointment</h2>
-        <form onSubmit={handleSubmit} className='form'>
+        <h2>{isEditMode ? 'Edit Appointment' : 'Set Appointment'}</h2>
+        <form onSubmit={handleSubmit} className="form">
           <label>
             Name:
-            <input type="text" name="name" value={appointmentData.name} onChange={handleChange} required />
+            <input type="text" name="name" placeholder='Full Name' value={appointmentData.name} onChange={handleChange} required />
           </label>
           <label>
             Date:
@@ -48,7 +57,7 @@ const AppointmentModal = ({ onClose, onAddAppointment }) => {
               <option value="other">Other</option>
             </select>
           </label>
-          <button type="submit">Submit</button>
+          <button type="submit">{isEditMode ? 'Update' : 'Submit'}</button>
           <button type="button" onClick={onClose}>Close</button>
         </form>
       </div>
