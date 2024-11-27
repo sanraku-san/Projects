@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app.views import AppointmentListView
+from app.views import AppointmentListView, AppointmentDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/appointments/', AppointmentListView.as_view(), name='appointment-list'),
+    path('api/appointments/<int:pk>/', AppointmentDetailView.as_view(), name='appointment-detail'),
     # If you have other views to include, you can add them here
     # path('some-url/', SomeOtherView.as_view(), name='some_view'),
 ]

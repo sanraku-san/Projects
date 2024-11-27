@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Appointment
 from .serializers import AppointmentSerializer
-# Create your views here.
 
 class AppointmentListView(APIView):
     def get(self, request):
@@ -17,7 +16,23 @@ class AppointmentListView(APIView):
         # Create a new appointment
         serializer = AppointmentSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()  # Save the new appointment to the database
-            return Response(serializer.data, status=status.HTTP_201_CREATED)  # Return the created appointment with a 201 status
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  # Return validation errors with a 400 status
+            serializer.save() 
+            return Response(serializer.data, status=status.HTTP_201_CREATED)  
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
 
+class AppointmentDetailView(APIView):
+    def get_object(self, pk):
+        return get_object_or_404(Appointment, pk=pk)
+
+    def put(self, request, pk):
+        appointment = self.get_object(pk)
+        serializer = AppointmentSerializer(appointment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        appointment = self.get_object(pk)
+        appointment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
